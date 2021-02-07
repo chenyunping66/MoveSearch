@@ -1,88 +1,90 @@
-.Wokoo {
-  position: absolute;
-  text-align: center;
-  width: 400px;
-  height: 400px;
-  top: 0;
-  right: 0;
-  z-index: 999;
-}
-.Wokoo-logo {
-  height: 30vmin;
-  border-radius: 50%;
-  pointer-events: none;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .Wokoo-logo {
-    animation: Wokoo-app-logo-spin infinite 20s linear;
-  }
+.wokoo-app-fold {
+  position: fixed;
+  top: 50%;
+  margin-top: -47px;
 }
 
-.Wokoo-header {
-  background-color: #6c4d25;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  height: 100%;
-}
-
-.Wokoo-link {
-  color: #efb61c;
-}
-.Wokoo-close-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
-.Wokoo-hide {
-  position: absolute;
-  text-align: center;
-  width: 100px;
-  height: 40px;
-  background-color: #6c4d25;
-  top: 0;
-  right: 0;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  cursor: pointer;
-}
-.Wokoo-hide-logo {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-@keyframes Wokoo-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.move-search{
-  position: absolute;
-  text-align: center;
-  width: 350px;
-  max-height: 300px;
-  top: 0;
-  right: 0;
-  border-radius: 5px;
-  z-index: 2147483647;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 16px 100px 0px;
-  transition: all 0.1s ease-out 0s;
-  border: 1px solide #282a33;
+.wokoo-app-unfold {
+  position: fixed;
+  top: 52px;
+  height: calc(100% - 52px);
+  width: 250px;
+  z-index: 99;
   background: #fff;
-  font-size: 12px;
-  overflow: scroll;
-  text-align: left;
+  font-size: 14px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  -ms-scroll-chaining: contain;
+  box-shadow: 1px 0px 3px rgb(18 18 18 / 10%);
+}
+::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+.list-ul {
+  padding: 10px;
+}
+.list-li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f6f6f6;
+}
+.list-a {
+  display: block;
+  margin-bottom: 5px;
+}
+.list-span {
+  width: 50%;
+  display: inline-block;
+  text-align: right;
+  color: #8590a6;
+}
+.list-li:hover {
+  color: #0066ff;
+}
+.octotree-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  left: 0;
+  box-sizing: border-box;
+  --color-text-primary: #24292e;
+  --color-bg-canvas: #ffffff;
+  --color-border-primary: #e1e4e8;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-canvas);
+  box-shadow: 0 2px 8px var(--color-border-primary);
+  opacity: 1;
+  height: 94px;
+  line-height: 1;
+  position: absolute;
+  right: -30px;
+  text-align: center;
+  top: 33%;
+  width: 36px;
+  z-index: 1000000001;
+  cursor: pointer;
+  border-radius: 0px 4px 4px 0px;
+  border-left: none;
+  padding: 6px;
+  transition: right 0.25s ease-in 0.2s, opacity 0.35s ease-in 0.2s;
+}
+.octotree-toggle-icon {
+  margin-left: 4px;
+}
+.svg-icon {
+  display: inline-flex;
+  align-self: center;
+  position: relative;
+  height: 1em;
+  width: 1em;
+  color: #0066ff;
+  opacity: 0.3;
+  margin-right: 5px;
+}
+
+.svg-icon svg {
+  height: 1em;
+  width: 1em;
+  bottom: -0.125em;
+  position: absolute;
 }
